@@ -4,7 +4,6 @@
 
 Dragon Find es una herramienta de búsqueda diseñada para buscar palabras clave específicas dentro de archivos de texto en un sistema Unix/Linux. Desarrollada por isntzero, esta utilidad permite a los usuarios especificar el nombre de un archivo de origen, una palabra clave a buscar y un archivo de destino donde se guardarán los resultados encontrados.
 
-también con un setup que instala todos los requerimientos
 
 ![image](https://github.com/isntzero/dragon_find/assets/47724579/1f70c300-6f16-4fb8-b440-de66ec4aa1c2)
 
