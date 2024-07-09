@@ -33,7 +33,7 @@ if [ "$execute" == "1" ]; then
     fi
     
     # Volver a ejecutar menú
-    sudo bash ./setup.sh
+    sudo bash setup.sh
 
 elif [ "$execute" == "2" ]; then
     clear
@@ -57,11 +57,11 @@ else
     echo "¿Quieres continuar? [y/n]" | lolcat
     read continue
     if [ "$continue" == "y" ]; then
-        sudo bash ./setup.sh
+        sudo bash setup.sh
     elif [ "$continue" == "n" ]; then
         exit
     else
         cowsay -f dragon "Ha ocurrido un error" | lolcat
-        sudo bash ./setup.sh
+        sudo bash setup.sh
     fi
 fi
