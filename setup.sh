@@ -20,12 +20,12 @@ if [ "$execute" == "1" ]; then
     # Volver a ejecutar menú
     sudo sh ./dragon_find/setup.sh
 
-elif [ "$execute" == "2" ]; then
+elif [ "$execute" == "2" ];
     clear
     # Ejecuta el script principal
     sudo sh ./dragon_find/dragonfind.sh
     
-elif [ "$execute" == "3" ]; then
+elif [ "$execute" == "3" ];
     clear
     # Salir del script
     exit
@@ -38,7 +38,7 @@ else
     read continue
     if [ "$continue" == "y" ]; then
         sudo sh ./dragon_find/setup.sh
-    elif [ "$continue" == "n" ]; then
+    elif [ "$continue" == "n" ]; 
         exit
     else
         cowsay -f dragon "Ha ocurrido un error" | lolcat
