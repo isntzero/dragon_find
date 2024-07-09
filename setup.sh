@@ -13,17 +13,37 @@ read execute
 if [ "$execute" == "1" ]; then 
     clear
     echo "Instalando requisitos" | lolcat
-    # Descomprime el archivo dragond_find.tar.gz
-    tar -xzvf ./dragon_find.tar.gz 
+    
+    # Descomprime el archivo dragon_find.tar.gz
+    if [ -f "./dragon_find.tar.gz" ]; then
+        tar -xzvf ./dragon_find.tar.gz 
+        echo "Archivo descomprimido correctamente." | lolcat
+    else
+        echo "Archivo dragon_find.tar.gz no encontrado." | lolcat
+        exit 1
+    fi
+    
     # Ejecuta el script de requisitos desde el directorio requeriments
-    sudo sh ./requeriments/requeriments.sh 
+    if [ -f "./requeriments/requeriments.sh" ]; then
+        sudo bash ./requeriments/requeriments.sh 
+        echo "Requisitos instalados correctamente." | lolcat
+    else
+        echo "Script requeriments.sh no encontrado." | lolcat
+        exit 1
+    fi
+    
     # Volver a ejecutar menú
-    sudo sh ./dragon_find/setup.sh
+    sudo bash ./dragon_find/setup.sh
 
 elif [ "$execute" == "2" ]; then
     clear
     # Ejecuta el script principal
-    sudo sh ./dragon_find/dragonfind.sh
+    if [ -f "./dragon_find/dragonfind.sh" ]; then
+        sudo bash ./dragon_find/dragonfind.sh
+    else
+        echo "Script dragonfind.sh no encontrado." | lolcat
+        exit 1
+    fi
     
 elif [ "$execute" == "3" ]; then
     clear
@@ -37,11 +57,11 @@ else
     echo "¿Quieres continuar? [y/n]" | lolcat
     read continue
     if [ "$continue" == "y" ]; then
-        sudo sh ./dragon_find/setup.sh
+        sudo bash ./dragon_find/setup.sh
     elif [ "$continue" == "n" ]; then
         exit
     else
         cowsay -f dragon "Ha ocurrido un error" | lolcat
-        sudo sh ./dragon_find/setup.sh
+        sudo bash ./dragon_find/setup.sh
     fi
 fi
