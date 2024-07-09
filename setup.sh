@@ -19,17 +19,22 @@ if [ "$execute" == "1" ]; then
         tar -xzvf ./dragon_find.tar.gz 
         echo "Archivo descomprimido correctamente." | lolcat
     else
+        clear
         echo "Archivo dragon_find.tar.gz no encontrado." | lolcat
-        exit 1
+        sudo bash setup.sh
     fi
     
     # Ejecuta el script de requisitos desde el directorio requeriments
     if [ -f "./requeriments/requeriments.sh" ]; then
+        clear
         sudo bash ./requeriments/requeriments.sh 
         echo "Requisitos instalados correctamente." | lolcat
+        sudo bash setup.sh
     else
+        clear
         echo "Script requeriments.sh no encontrado." | lolcat
         exit 1
+        sudo bash setup.sh
     fi
     
     # Volver a ejecutar menú
@@ -42,7 +47,7 @@ elif [ "$execute" == "2" ]; then
         sudo bash ./dragon_find/dragonfind.sh
     else
         echo "Script dragonfind.sh no encontrado." | lolcat
-        exit 1
+        sudo bash setup.sh
     fi
     
 elif [ "$execute" == "3" ]; then
