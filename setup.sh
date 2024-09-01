@@ -1,5 +1,4 @@
 #!/bin/bash
-
 sudo apt install lolcat
 sudo apt install cowsay
 tar -xzvf ./dragon_find.tar.gz 
